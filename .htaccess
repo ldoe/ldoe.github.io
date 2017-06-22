@@ -1,1 +1,10 @@
-
+<IfModule mod rewrite.c>
+  RewriteEngine on
+  RewriteBase /
+  RewriteRule (.*) https://ldoe.github.io/$1 [R=301,L]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+  RewriteRule ^index\.php$ https://ldoe.github.io/ [R=301,L]
+ </IfModule>
+ 
+ ServerSignature Off
+ AddDefaultCharset UTF-8
